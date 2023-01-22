@@ -1,0 +1,9 @@
+export { default as Logo } from "./logo.svg";
+export { default as Phone } from "./phone.svg";
+export { default as Mail } from "./mail.svg";
+export { default as Login } from "./login.svg";
+export { default as Cart } from "./cart.svg";
+export { default as Exit } from "./exit.svg";
+export { default as Orders } from "./orders.svg";
+export { default as Favorite } from "./favorite.svg";
+export { default as Registration } from "./registration.svg";
