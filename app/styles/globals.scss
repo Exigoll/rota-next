@@ -4,15 +4,6 @@
 
 @import "./mixins.scss";
 
-*,
-*::after,
-*::before {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-	scroll-behavior: smooth;
-}
-
 html,
 body {
 	height: 100%;
@@ -23,46 +14,11 @@ html {
 }
 
 body {
-	@apply text-lightDark bg-white;
-	position: relative;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-	padding: 0;
-	font-size: inherit;
-	font-weight: inherit;
-	line-height: 1;
+	@apply relative font-text text-base text-lightDark bg-white;
 }
 
 img {
 	display: block;
-}
-
-a {
-	text-decoration: none;
-	color: inherit;
-	cursor: pointer;
-}
-
-ul,
-ol,
-li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-input,
-button {
-	background: transparent;
-	border: none;
-	outline: none;
 }
 
 main {
@@ -80,11 +36,9 @@ main {
 }
 
 .app {
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
-	margin: 0 auto;
 	/* @include adaptive-value-desktop("padding-top", 200, 168, 1);
 
 	@media (max-width: em(1024)) {
@@ -98,6 +52,10 @@ main {
 	@media (max-width: em(320)) {
 		padding-top: 204px;
 	} */
+}
+
+.main {
+	flex-grow: 1;
 }
 
 .container {

@@ -1,21 +1,25 @@
-import Header from "./components/layout/Header";
-import { inter } from "./fonts";
+import { Header } from "@components/layout/Header";
+import { Footer } from "@components/layout/Footer";
+import { roboto_mono, inter } from "./supports/fonts";
 import "./styles/globals.scss";
 
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+interface RootLayoutProps {
+	children: React.ReactElement;
+}
+
+const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 	return (
-		<html lang="ru">
+		<html lang="ru" className={`${inter.variable} ${roboto_mono.variable}`}>
 			<head />
-			<body className={`${inter.variable} font-sans`}>
+			<body>
 				<div className="app">
 					<Header />
 					{children}
+					{/* <Footer /> */}
 				</div>
 			</body>
 		</html>
 	);
-}
+};
+
+export default RootLayout;

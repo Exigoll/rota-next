@@ -21,10 +21,11 @@
 		],
 		"baseUrl": ".",
 		"paths": {
-			"@/public*": ["./public/*"],
-			"@/components*": ["./app/components/*"],
-			"@/ui*": ["./app/ui/*"],
-			"@/store*": ["./app/store/*"]
+			"@public/*": ["./public/*"],
+			"@supports/*": ["./app/supports/*"],
+			"@components/*": ["./app/components/*"],
+			"@ui/*": ["./app/ui/*"],
+			"@store/*": ["./app/store/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

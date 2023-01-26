@@ -1,0 +1,10 @@
+@import "../../../styles/mixins.scss";
+
+.logo {
+	&__icon {
+		@apply w-[350px] max-w-full max-desktop:w-[300px] max-tabletMax:w-[280px] max-mobileMax:w-[220px] fill-white will-change-transform transitionIcon tablet:hover:fill-peach active:scale-99;
+
+		//@include adaptive-value("width", 350, 180, 1);
+		//@include adaptive-value("height", 56, 30, 1);
+	}
+}
