@@ -5,7 +5,7 @@
 	z-index: 100;
 
 	&__top {
-		@apply h-[80px] text-white bg-darkBlue;
+		@apply h-full py-3 text-white bg-darkBlue;
 	}
 
 	&__bottom {
@@ -15,7 +15,6 @@
 
 .menu {
 	@apply flex items-center justify-between;
-	@include adaptive-value("height", 80, 40, 1);
 }
 
 /* Active link */
