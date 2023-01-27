@@ -1,0 +1,28 @@
+.menu {
+	@apply flex items-center justify-between gap-x-[30px] pt-[3px] max-tabletMax:hidden max-desktop:gap-x-[20px];
+}
+
+.menuMobile {
+	@apply fixed top-[62px] right-0 flex flex-col justify-center items-center gap-y-3 w-full h-[220px] bg-darkBlue border-t-[3px] border-solid border-peach;
+	animation-duration: 0.5s;
+	animation-name: animationMenu;
+	z-index: -20;
+}
+
+@keyframes animationMenu {
+	from {
+		top: -20%;
+	}
+
+	to {
+		top: 62px;
+	}
+}
+
+.link {
+	@apply linkHeader text-xl max-desktop:text-lg max-tabletMax:text-base max-mobileMax:text-sm transitionAll;
+}
+
+.icon {
+	@apply hidden w-[30px] h-[30px] max-tabletMax:block max-mobileMax:w-[22px] max-mobileMax:h-[22px] z-[1] fill-white cursor-pointer;
+}

@@ -10,7 +10,10 @@ export const NavigationMobile = () => {
 
 	return (
 		<>
-			<div className={styles.navigationMobile}>
+			<div
+				className={styles.navigationMobile}
+				onClick={() => setOpenMenu(false)}
+			>
 				{openMenu && (
 					<div className={styles.navigationLinksWrapper}>
 						<NavigationLinks isMobile={true} closeMenu={closeMenu} />

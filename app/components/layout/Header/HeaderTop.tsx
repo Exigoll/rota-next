@@ -1,16 +1,22 @@
 "use client";
-import { Logo } from "@components/ui/Logo";
-import { Navigation } from "@components/ui/Navigation";
+import { useState } from "react";
+import { IconLogo } from "@components/icons";
+import { NavBar } from "@components/ui/NavBar/NavBar";
 import styles from "./Header.module.scss";
 
 export const HeaderTop = () => {
+	const [openMenu, setOpenMenu] = useState(false);
+
 	return (
-		<div className={styles.header__top}>
+		<div className={styles.headerTop}>
 			<div className="container">
-				<nav className={styles.menu}>
-					<Logo />
-					<Navigation />
-				</nav>
+				<div
+					className={styles.headerTopWrapper}
+					onClick={e => e.stopPropagation()}
+				>
+					<IconLogo className={styles.logo} />
+					<NavBar openMenu={openMenu} setOpenMenu={setOpenMenu} />
+				</div>
 			</div>
 		</div>
 	);

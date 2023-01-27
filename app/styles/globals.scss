@@ -63,7 +63,6 @@ main {
 	margin: 0 auto;
 	@include adaptive-value("padding-right", 20, 10, 1);
 	@include adaptive-value("padding-left", 20, 10, 1);
-	padding: 0 20px;
 }
 
 .title {

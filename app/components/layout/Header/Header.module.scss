@@ -1,20 +1,26 @@
 @import "../../../styles/mixins.scss";
 
 .header {
-	@apply sticky top-0 w-full h-full;
-	z-index: 100;
+	@apply sticky top-0 w-full h-full z-[100];
+}
 
-	&__top {
-		@apply h-full py-3 text-white bg-darkBlue;
-	}
+.headerTop {
+	@apply h-full py-[10px] bg-darkBlue;
+}
 
-	&__bottom {
-		@apply bg-gray;
-	}
+.headerTopWrapper {
+	@apply flex items-center justify-between;
+}
+
+.headerBottom {
+	@apply h-full bg-gray;
 }
 
 .menu {
-	@apply flex items-center justify-between;
+}
+
+.logo {
+	@apply w-[300px] max-w-full max-desktop:w-[300px] max-tabletMax:w-[260px] max-mobileMax:w-[220px] fill-white;
 }
 
 /* Active link */
