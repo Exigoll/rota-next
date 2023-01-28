@@ -6,7 +6,7 @@ import "./styles/globals.scss";
 import { useState } from "react";
 
 interface RootLayoutProps {
-	children: React.ReactElement;
+	children: React.ReactNode;
 }
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
