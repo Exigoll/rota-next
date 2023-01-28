@@ -1,12 +1,10 @@
 "use client";
 import { useState } from "react";
-import { IconLogo } from "@components/icons";
+import { IconClose, IconHamburger, IconLogo } from "@components/icons";
 import { NavBar } from "@components/ui/NavBar/NavBar";
 import styles from "./Header.module.scss";
 
-export const HeaderTop = () => {
-	const [openMenu, setOpenMenu] = useState(false);
-
+export const HeaderTop = ({ openMenu, setOpenMenu }: any) => {
 	return (
 		<div className={styles.headerTop}>
 			<div className="container">
@@ -16,6 +14,17 @@ export const HeaderTop = () => {
 				>
 					<IconLogo className={styles.logo} />
 					<NavBar openMenu={openMenu} setOpenMenu={setOpenMenu} />
+					{openMenu ? (
+						<IconClose
+							className={styles.icon}
+							onClick={() => setOpenMenu(!openMenu)}
+						/>
+					) : (
+						<IconHamburger
+							className={styles.icon}
+							onClick={() => setOpenMenu(!openMenu)}
+						/>
+					)}
 				</div>
 			</div>
 		</div>

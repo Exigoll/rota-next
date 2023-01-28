@@ -16,25 +16,19 @@ export const NavBar = ({ openMenu, setOpenMenu }: any) => {
 		<>
 			<nav
 				className={openMenu ? styles.menuMobile : styles.menu}
-				onClick={() => setOpenMenu(false)}
+				onClick={e => e.stopPropagation()}
 			>
 				{links.map(({ ...links }) => (
-					<Link className={styles.link} key={links.id} href={links.path}>
+					<Link
+						className={styles.link}
+						key={links.id}
+						href={links.path}
+						onClick={() => setOpenMenu(!openMenu)}
+					>
 						{links.title}
 					</Link>
 				))}
 			</nav>
-			{openMenu ? (
-				<IconClose
-					className={styles.icon}
-					onClick={() => setOpenMenu(!openMenu)}
-				/>
-			) : (
-				<IconHamburger
-					className={styles.icon}
-					onClick={() => setOpenMenu(!openMenu)}
-				/>
-			)}
 		</>
 	);
 };

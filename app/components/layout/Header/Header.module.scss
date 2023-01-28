@@ -16,7 +16,8 @@
 	@apply h-full bg-gray;
 }
 
-.menu {
+.icon {
+	@apply hidden w-[30px] h-[30px] max-tabletMax:block max-mobileMax:w-[22px] max-mobileMax:h-[22px] z-[1] fill-white cursor-pointer;
 }
 
 .logo {
