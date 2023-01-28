@@ -23,7 +23,7 @@ export const NavBar = ({ openMenu, setOpenMenu }: any) => {
 						className={styles.link}
 						key={links.id}
 						href={links.path}
-						onClick={() => setOpenMenu(!openMenu)}
+						onClick={() => setOpenMenu(false)}
 					>
 						{links.title}
 					</Link>
