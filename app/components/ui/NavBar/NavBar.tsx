@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./NavBar.module.scss";
 import { IconClose, IconHamburger } from "@components/icons";
 
@@ -12,6 +13,8 @@ const links = [
 ];
 
 export const NavBar = ({ openMenu, setOpenMenu }: any) => {
+	const router = usePathname();
+
 	return (
 		<>
 			<nav
@@ -20,7 +23,8 @@ export const NavBar = ({ openMenu, setOpenMenu }: any) => {
 			>
 				{links.map(({ ...links }) => (
 					<Link
-						className={styles.link}
+						className={router == links.path ? styles.linkActive : styles.link}
+						/* className={router === styles.link : styles.linkActive} */
 						key={links.id}
 						href={links.path}
 						onClick={() => setOpenMenu(false)}

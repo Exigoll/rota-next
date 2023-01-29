@@ -9,6 +9,14 @@
 	z-index: -20;
 }
 
+.link {
+	@apply linkHeader text-xl max-desktop:text-lg max-tabletMax:text-base max-mobileMax:text-sm transitionAll;
+}
+
+.linkActive {
+	@apply linkHeaderActive text-xl max-desktop:text-lg max-tabletMax:text-base max-mobileMax:text-sm transitionAll;
+}
+
 @keyframes animationMenu {
 	from {
 		transform: translateY(-100%);
@@ -19,8 +27,4 @@
 		transform: translateY(0);
 		//top: 62px;
 	}
-}
-
-.link {
-	@apply linkHeader text-xl max-desktop:text-lg max-tabletMax:text-base max-mobileMax:text-sm transitionAll;
 }

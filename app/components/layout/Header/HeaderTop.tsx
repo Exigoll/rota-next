@@ -1,7 +1,6 @@
 "use client";
-import { useState } from "react";
 import { IconClose, IconHamburger, IconLogo } from "@components/icons";
-import { NavBar } from "@components/ui/NavBar/NavBar";
+import { NavBar } from "@components/ui/NavBar";
 import styles from "./Header.module.scss";
 
 export const HeaderTop = ({ openMenu, setOpenMenu }: any) => {

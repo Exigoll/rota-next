@@ -45,7 +45,6 @@ module.exports = {
 					borderStyle: "solid",
 					borderColor: "transparent",
 					willChange: "transform",
-					//transition: "border 0.5s, color 0.5s, transform 0.1s ease-in-out",
 					"&:active": {
 						transform: "scale(0.99)",
 					},
@@ -55,6 +54,15 @@ module.exports = {
 							color: theme("colors.peach"),
 						},
 					},
+				},
+				".linkHeaderActive": {
+					fontFamily: theme("fontFamily.title"),
+					fontWeight: 700,
+					color: theme("colors.peach"),
+					borderBottomWidth: 3,
+					borderStyle: "solid",
+					willChange: "transform",
+					borderColor: theme("colors.peach"),
 				},
 			});
 			addUtilities({

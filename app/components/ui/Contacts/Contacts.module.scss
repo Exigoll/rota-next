@@ -1,0 +1,88 @@
+@import "./../../../styles/mixins.scss";
+
+.contacts {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: flex-start;
+	row-gap: 10px;
+
+	@media (max-width: em(1024)) {
+		order: 1;
+		@include adaptive-value-mobile("column-gap", 20, 15, 0);
+		@include adaptive-value-tablet("max-width", 180, 158, 1);
+	}
+
+	@media (max-width: em(480)) {
+		width: 100%;
+	}
+
+	@media (max-width: em(640)) {
+		flex-direction: row;
+		justify-content: center;
+		column-gap: 30px;
+		width: 15%;
+	}
+}
+
+.link {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	will-change: transform;
+	transition: all 0.5s ease;
+
+	@media (min-width: em(769)) {
+		&:hover {
+			.link__icon {
+				@apply fill-peach;
+				transform: scale(1.2);
+			}
+			.link__text {
+				@apply text-peach;
+			}
+		}
+	}
+
+	&:active {
+		transform: scale(0.96);
+
+		.link__icon {
+			transform: scale(0.96);
+		}
+	}
+}
+
+.icon {
+	@apply fill-lightDark;
+	@include adaptive-value-desktop("width", 24, 20, 1);
+	@include adaptive-value-desktop("height", 20, 16, 1);
+	will-change: transform;
+	transition: all 0.5s ease;
+
+	@media (max-width: em(1024)) {
+		width: 20px;
+		height: 16px;
+	}
+
+	@media (max-width: em(640)) {
+		width: 30px;
+		height: 30px;
+	}
+
+	@media (max-width: em(375)) {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.text {
+	@apply text-lightDark;
+	@include adaptive-value("font-size", 16, 12, 1);
+	@include adaptive-value("line-height", 19, 15, 1);
+	font-weight: 400;
+	transition: all 0.5s ease;
+
+	@media (max-width: em(640)) {
+		display: none;
+	}
+}
