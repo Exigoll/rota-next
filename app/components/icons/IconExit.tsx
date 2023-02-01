@@ -1,8 +1,8 @@
 export const IconExit = (props: React.ComponentPropsWithRef<"svg">) => {
 	return (
-		<svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-			<path d="M10.138 1.815A3 3 0 0 1 14 4.688v14.624a3 3 0 0 1-3.862 2.873l-6-1.8A3 3 0 0 1 2 17.512V6.488a3 3 0 0 1 2.138-2.873l6-1.8zM15 4a1 1 0 0 1 1-1h3a3 3 0 0 1 3 3v1a1 1 0 1 1-2 0V6a1 1 0 0 0-1-1h-3a1 1 0 0 1-1-1zm6 12a1 1 0 0 1 1 1v1a3 3 0 0 1-3 3h-3a1 1 0 1 1 0-2h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1zM9 11a1 1 0 1 0 0 2h.001a1 1 0 1 0 0-2H9z" />
-			<path d="M16 12h5m0 0-2-2m2 2-2 2" />
+		<svg {...props} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+			<path fill="none" d="M0 0h24v24H0V0z"></path>
+			<path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5a2 2 0 00-2 2v4h2V5h14v14H5v-4H3v4a2 2 0 002 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
 		</svg>
 	);
 };

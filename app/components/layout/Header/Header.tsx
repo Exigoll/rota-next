@@ -6,7 +6,7 @@ export const Header = ({ openMenu, setOpenMenu }: any) => {
 	return (
 		<header className={styles.header}>
 			<HeaderTop openMenu={openMenu} setOpenMenu={setOpenMenu} />
-			<HeaderBottom />
+			{/* <HeaderBottom /> */}
 		</header>
 	);
 };

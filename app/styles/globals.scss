@@ -4,6 +4,10 @@
 
 @import "./mixins.scss";
 
+:root {
+	font-size: 16px;
+}
+
 html,
 body {
 	height: 100%;
@@ -23,6 +27,14 @@ img {
 
 main {
 	flex: 1 0 auto;
+}
+
+button,
+input,
+select {
+	border: none;
+	outline: none;
+	background: transparent;
 }
 
 ::-webkit-scrollbar {
@@ -60,6 +72,7 @@ main {
 
 .container {
 	max-width: 1475px;
+	height: 100%;
 	margin: 0 auto;
 	@include adaptive-value("padding-right", 20, 10, 1);
 	@include adaptive-value("padding-left", 20, 10, 1);

@@ -1,5 +1,6 @@
 import { Contacts } from "@components/ui/Contacts";
 import { Search } from "@components/ui/Search";
+import { Office } from "@components/ui/Office";
 import styles from "./Header.module.scss";
 
 export const HeaderBottom = () => {
@@ -9,6 +10,7 @@ export const HeaderBottom = () => {
 				<div className={styles.headerBottomWrapper}>
 					<Contacts />
 					<Search />
+					<Office />
 				</div>
 			</div>
 		</div>

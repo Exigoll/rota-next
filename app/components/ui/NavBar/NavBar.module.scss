@@ -1,30 +1,28 @@
 .menu {
-	@apply flex items-center justify-between gap-x-[30px] pt-[3px] max-tabletMax:hidden max-desktop:gap-x-[20px];
+	@apply flex items-center justify-between gap-x-[40px] desktopXL:gap-x-[30px] h-full desktop:hidden;
 }
 
 .menuMobile {
-	@apply fixed top-[62px] max-mobileMax:top-[55px] right-0 flex flex-col justify-center items-center gap-y-3 w-full h-[220px] bg-darkBlue border-t-[3px] border-solid border-peach;
+	@apply fixed top-[70px] tablet:top-[60px] right-0 flex flex-col justify-center items-center gap-y-3 w-full h-[220px] bg-darkBlue border-t-[3px] border-solid border-peach;
 	animation-duration: 1s;
 	animation-name: animationMenu;
 	z-index: -20;
 }
 
 .link {
-	@apply linkHeader text-xl max-desktop:text-lg max-tabletMax:text-base max-mobileMax:text-sm transitionAll;
+	@apply linkHeader text-xl desktop2XL:text-lg tablet:text-base mobile2XL:text-sm transitionAll;
 }
 
 .linkActive {
-	@apply linkHeaderActive text-xl max-desktop:text-lg max-tabletMax:text-base max-mobileMax:text-sm transitionAll;
+	@apply linkHeaderActive;
 }
 
 @keyframes animationMenu {
 	from {
 		transform: translateY(-100%);
-		//top: -20%;
 	}
 
 	to {
 		transform: translateY(0);
-		//top: 62px;
 	}
 }

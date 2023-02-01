@@ -6,12 +6,15 @@ module.exports = {
 	content: ["./app/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		screens: {
-			full: "1920px",
-			desktop: "1025px",
-			tabletMax: "941px",
-			tablet: "769px",
-			mobileMax: "491px",
-			mobile: "376px",
+			"desktop3XL": { "max": "1920px" },
+			"desktop2XL": { "max": "1366px" },
+			"desktopXL": { "max": "1280px" },
+			"desktop": { "max": "1024px" },
+			"tabletXL": { "max": "962px" },
+			"tablet": { "max": "768px" },
+			"mobile2XL": { "max": "490px" },
+			"mobileXL": { "max": "414px" },
+			"mobile": { "max": "375px" },
 		},
 		extend: {
 			fontFamily: {
@@ -56,27 +59,28 @@ module.exports = {
 					},
 				},
 				".linkHeaderActive": {
-					fontFamily: theme("fontFamily.title"),
-					fontWeight: 700,
 					color: theme("colors.peach"),
-					borderBottomWidth: 3,
-					borderStyle: "solid",
-					willChange: "transform",
 					borderColor: theme("colors.peach"),
 				},
 			});
 			addUtilities({
-				".transitionColor": {
+				".transitionText": {
 					transition: "color 0.3s ease-in-out",
 				},
 				".transitionIcon": {
-					transition: "fill 0.3s, transform 0.1s ease-in-out",
+					transition: "all 0.3s ease-in-out",
 				},
 				".transitionBorder": {
 					transition: "border 0.3s ease-in-out",
 				},
 				".transitionAll": {
 					transition: "transform 0.1s, color 0.3s, border 0.3s ease-in-out",
+				},
+				".transitionButton": {
+					transition: "transform 0.1s, background-color 0.3s ease-in-out",
+				},
+				".boxShadow": {
+					boxShadow: "0 0 10px 3px rgba(0, 0, 0, 0.2)",
 				},
 			});
 		}),
