@@ -23,11 +23,11 @@
 
 /* Header bottom */
 .headerBottom {
-	@apply w-full h-full py-[10px] bg-gray;
+	@apply w-full h-[90px] tablet:h-[160px] bg-gray;
 }
 
 .headerBottomWrapper {
-	@apply flex items-center justify-between gap-x-[50px] w-full;
+	@apply flex items-center justify-between gap-x-[50px] tabletXL:gap-x-[40px] mobile2XL:gap-x-[20px] w-full h-full tablet:flex-wrap;
 }
 
 //Modal-window for Login

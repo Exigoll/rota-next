@@ -1,5 +1,5 @@
 .contacts {
-	@apply flex flex-col gap-y-[10px];
+	@apply flex gap-x-[20px] desktop:gap-x-[15px] mobile2XL:flex-col mobile2XL:gap-y-[10px];
 }
 
 .link {
@@ -7,5 +7,5 @@
 }
 
 .icon {
-	@apply w-[25px] h-[25px] mobileXL:w-[20px] mobileXL:h-[20px] fill-lightDark tablet:hover:fill-peach tablet:hover:scale-125 will-change-transform transitionIcon;
+	@apply w-[30px] h-[30px] desktop:w-[25px] desktop:h-[25px] mobileXL:w-[20px] mobileXL:h-[20px] fill-lightDark tablet:hover:fill-peach tablet:hover:scale-125 will-change-transform transitionIcon;
 }

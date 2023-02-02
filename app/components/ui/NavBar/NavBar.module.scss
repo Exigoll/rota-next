@@ -6,7 +6,7 @@
 	@apply fixed top-[70px] tablet:top-[60px] right-0 flex flex-col justify-center items-center gap-y-3 w-full h-[220px] bg-darkBlue border-t-[3px] border-solid border-peach;
 	animation-duration: 1s;
 	animation-name: animationMenu;
-	z-index: -20;
+	z-index: 1;
 }
 
 .link {

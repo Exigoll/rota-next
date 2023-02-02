@@ -1,20 +1,18 @@
-@import "../../../styles/mixins.scss";
-
 .search {
-	@apply flex items-center justify-between max-w-[600px] w-full h-[60px] text-base font-medium;
+	@apply flex items-center justify-between w-full h-[70px] desktop2XL:h-[60px] max-w-[720px] desktop:max-w-[520px] tablet:max-w-full text-base font-medium  desktop:text-sm tablet:order-3;
 
 	input {
-		@apply max-w-[480px] w-full h-full px-[20px] border-[3px] border-solid border-transparent text-lightDark bg-white tablet:hover:boxShadow tablet:hover:border-peach focus:boxShadow focus:border-peach;
+		@apply basis-[80%] w-full h-full px-[20px] desktop:px-[15px] border-[3px] border-solid border-transparent text-lightDark bg-white tablet:hover:boxShadow tablet:hover:border-peach focus:boxShadow focus:border-peach;
 		border-radius: 10px 0px 0px 10px;
 		transition: all 0.3s ease;
 
 		&::placeholder {
-			@apply text-placeholder font-bold text-base;
+			@apply text-placeholder font-bold text-base desktop:text-sm;
 		}
 	}
 
 	button {
-		@apply max-w-[120px] w-full h-full flex items-center justify-center bg-peach text-white font-bold cursor-pointer will-change-transform tablet:hover:bg-darkPeach active:scale-99 transitionButton;
+		@apply basis-[20%] w-full h-full flex items-center justify-center bg-peach text-white font-bold cursor-pointer will-change-transform tablet:hover:bg-darkPeach active:scale-99 transitionButton;
 		border-radius: 0 15px 15px 0;
 	}
 }

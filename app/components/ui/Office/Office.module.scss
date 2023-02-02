@@ -1,17 +1,15 @@
 @import "../../../styles/mixins.scss";
 
 .office {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	column-gap: 1px;
-	max-width: 299px;
-	width: 100%;
-	height: 60px;
+	@apply flex items-center justify-between gap-x-[1px] max-w-[299px] w-full h-[70px] desktop2XL:h-[60px];
 }
 
 .btn {
 	@apply flex flex-col items-center justify-center w-full h-full bg-lightDark text-white font-text tablet:hover:bg-heavyDark transitionButton cursor-pointer will-change-transform active:scale-99;
+
+	span {
+		@apply text-base tablet:text-sm;
+	}
 }
 
 .btnLogin,

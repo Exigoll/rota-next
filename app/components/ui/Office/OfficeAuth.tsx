@@ -14,18 +14,14 @@ export const OfficeAuth = () => {
 		<div className={`${styles.office} ${styles.auth}`}>
 			<button
 				className={`${styles.btn} ${styles.btnOrders}`}
-				/* onClick={() => router.push("./orders")} */
+				onClick={() => router.push("./orders")}
 			>
 				<IconOrders className={styles.icon} />
 			</button>
-			<button
-				className={styles.btn} /* onClick={() => router.push("./favorite")} */
-			>
+			<button className={styles.btn} onClick={() => router.push("./favorite")}>
 				<IconFavorite className={styles.icon} />
 			</button>
-			<button
-				className={styles.btn} /* onClick={() => router.push("./cart")} */
-			>
+			<button className={styles.btn} onClick={() => router.push("./cart")}>
 				<IconCart className={styles.icon} />
 			</button>
 			<button className={`${styles.btn} ${styles.btnExit}`}>
