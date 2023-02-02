@@ -7,5 +7,5 @@
 }
 
 .icon {
-	@apply w-[30px] h-[30px] desktop:w-[25px] desktop:h-[25px] mobileXL:w-[20px] mobileXL:h-[20px] fill-lightDark tablet:hover:fill-peach tablet:hover:scale-125 will-change-transform transitionIcon;
+	@apply w-[30px] h-[30px] fill-lightDark tablet:hover:fill-peach tablet:hover:scale-125 will-change-transform transitionIcon;
 }

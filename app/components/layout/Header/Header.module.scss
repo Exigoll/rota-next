@@ -18,7 +18,7 @@
 }
 
 .icon {
-	@apply hidden w-[30px] h-[30px] desktop:block z-[1] fill-white cursor-pointer;
+	@apply hidden w-[30px] h-[30px] desktop:block mobileXL:w-[22px] mobileXL:h-[22px] z-[1] fill-white cursor-pointer;
 }
 
 /* Header bottom */
