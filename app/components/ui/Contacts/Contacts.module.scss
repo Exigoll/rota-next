@@ -1,5 +1,13 @@
 .contacts {
-	@apply flex gap-x-[20px] desktop:gap-x-[15px] mobile2XL:flex-col mobile2XL:gap-y-[10px];
+	@apply flex gap-x-[20px];
+
+	@screen desktop {
+		@apply gap-x-[15px];
+	}
+
+	@screen mobile2XL {
+		@apply flex-col gap-y-[10px];
+	}
 }
 
 .link {
@@ -7,5 +15,9 @@
 }
 
 .icon {
-	@apply w-[30px] h-[30px] fill-lightDark tablet:hover:fill-peach tablet:hover:scale-125 will-change-transform transitionIcon;
+	@apply w-[30px] h-[30px] fill-lightDark will-change-transform transitionIcon;
+
+	@screen tabletMin {
+		@apply hover:fill-peach hover:scale-125;
+	}
 }

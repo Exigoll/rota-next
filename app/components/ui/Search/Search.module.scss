@@ -1,18 +1,46 @@
 .search {
-	@apply flex items-center justify-between w-full h-[70px] desktop2XL:h-[60px] max-w-[720px] desktop:max-w-[520px] tablet:max-w-full text-base font-medium  desktop:text-sm tablet:order-3;
+	@apply flex items-center justify-between w-full max-w-[720px] h-[70px] text-base font-medium;
+
+	@screen desktop2XL {
+		@apply h-[60px];
+	}
+
+	@screen desktop {
+		@apply text-sm;
+	}
+
+	@screen tablet {
+		@apply max-w-full order-3;
+	}
 
 	input {
-		@apply basis-[80%] w-full h-full px-[20px] desktop:px-[15px] border-[3px] border-solid border-transparent text-lightDark bg-white tablet:hover:boxShadow tablet:hover:border-peach focus:boxShadow focus:border-peach;
+		@apply basis-[80%] w-full h-full px-[20px] border-[3px] border-solid border-transparent text-lightDark bg-white  focus:boxShadow focus:border-peach;
 		border-radius: 10px 0px 0px 10px;
 		transition: all 0.3s ease;
 
+		@screen desktop {
+			@apply px-[15px];
+		}
+
+		@screen tabletMin {
+			@apply hover:border-peach hover:boxShadow;
+		}
+
 		&::placeholder {
-			@apply text-placeholder font-bold text-base desktop:text-sm;
+			@apply text-placeholder font-bold text-base;
+
+			@screen desktop {
+				@apply text-sm;
+			}
 		}
 	}
 
 	button {
-		@apply basis-[20%] w-full h-full flex items-center justify-center bg-peach text-white font-bold cursor-pointer will-change-transform tablet:hover:bg-darkPeach active:scale-99 transitionButton;
+		@apply w-full h-full flex items-center justify-center basis-[20%] bg-peach text-white font-bold cursor-pointer will-change-transform active:scale-99 transitionButton;
 		border-radius: 0 15px 15px 0;
+
+		@screen tabletMin {
+			@apply hover:bg-darkPeach;
+		}
 	}
 }

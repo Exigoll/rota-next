@@ -1,20 +1,48 @@
 .menu {
-	@apply flex items-center justify-between gap-x-[40px] desktopXL:gap-x-[30px] h-full desktop:hidden;
+	@apply flex items-center justify-between gap-x-[40px] h-full;
+
+	@screen desktopXL {
+		@apply gap-x-[30px];
+	}
+
+	@screen desktop {
+		@apply hidden;
+	}
 }
 
 .menuMobile {
-	@apply fixed top-[70px] tablet:top-[60px] right-0 flex flex-col justify-center items-center gap-y-3 w-full h-[220px] bg-darkBlue border-t-[3px] border-solid border-peach;
+	@apply fixed top-[70px] right-0 flex flex-col justify-center items-center gap-y-3 w-full h-[220px] bg-darkBlue border-t-[3px] border-solid border-peach z-[1];
 	animation-duration: 1s;
 	animation-name: animationMenu;
-	z-index: 1;
+
+	@screen tablet {
+		@apply top-[60px];
+	}
 }
 
 .link {
-	@apply linkHeader text-xl desktop2XL:text-lg tablet:text-base mobile2XL:text-sm transitionAll;
+	@apply font-title font-bold text-white text-xl transitionAll will-change-transform active:scale-99;
+	border-bottom: 3px solid transparent;
+
+	@screen desktop2XL {
+		@apply text-lg;
+	}
+
+	@screen tabletMin {
+		@apply hover:border-peach hover:text-peach;
+	}
+
+	@screen tablet {
+		@apply text-base;
+	}
+
+	@screen mobile2XL {
+		@apply text-sm;
+	}
 }
 
 .linkActive {
-	@apply linkHeaderActive;
+	@apply text-peach border-peach;
 }
 
 @keyframes animationMenu {

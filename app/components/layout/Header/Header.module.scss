@@ -6,7 +6,15 @@
 
 /* Header top */
 .headerTop {
-	@apply w-full h-[80px] desktop2XL:h-[70px] tablet:h-[60px] bg-darkBlue;
+	@apply w-full h-[80px] bg-darkBlue;
+
+	@screen desktop2XL {
+		@apply h-[70px];
+	}
+
+	@screen tablet {
+		@apply h-[60px];
+	}
 }
 
 .headerTopWrapper {
@@ -14,300 +22,58 @@
 }
 
 .logo {
-	@apply h-full max-w-full w-[350px] desktop2XL:w-[320px] desktopXL:w-[300px] tablet:w-[250px] fill-white;
+	@apply h-full max-w-full w-[350px] fill-white;
+
+	@screen desktop2XL {
+		@apply w-[320px];
+	}
+
+	@screen desktopXL {
+		@apply w-[300px];
+	}
+
+	@screen tablet {
+		@apply w-[250px];
+	}
 }
 
 .icon {
-	@apply hidden w-[30px] h-[30px] desktop:block mobileXL:w-[22px] mobileXL:h-[22px] z-[1] fill-white cursor-pointer;
+	@apply hidden w-[30px] h-[30px] fill-white cursor-pointer z-[1];
+
+	@screen desktop {
+		@apply block;
+	}
+
+	@screen mobileXL {
+		@apply w-[22px] h-[22px];
+	}
 }
 
 /* Header bottom */
 .headerBottom {
-	@apply w-full h-[90px] tablet:h-[160px] bg-gray;
+	@apply w-full h-[90px] bg-gray;
+
+	@screen tablet {
+		@apply h-[160px];
+	}
 }
 
 .headerBottomWrapper {
-	@apply flex items-center justify-between gap-x-[50px] tabletXL:gap-x-[40px] mobile2XL:gap-x-[20px] w-full h-full tablet:flex-wrap;
+	@apply flex items-center justify-between gap-x-[50px] w-full h-full;
+
+	@screen tabletXL {
+		@apply gap-x-[40px];
+	}
+
+	@screen tablet {
+		@apply flex-wrap;
+	}
+
+	@screen mobile2XL {
+		@apply gap-x-[20px];
+	}
+
+	@screen mobileXL {
+		@apply gap-x-[10px];
+	}
 }
-
-//Modal-window for Login
-/* .modal-overlay {
-	position: fixed;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	width: 100%;
-	background-color: rgba(0, 0, 0, 0.9);
-	visibility: hidden;
-	opacity: 0;
-	transition: all 0.3s ease-in-out;
-
-	&--visible {
-		opacity: 1;
-		visibility: visible;
-		z-index: 6;
-		transition: all 0.3s ease-in-out;
-	}
-} */
-
-/* .modal {
-	display: none;
-
-	&--visible {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		row-gap: 35px;
-		width: 520px;
-		height: 425px;
-		@include adaptive-value("border-radius", 20, 10, 1);
-		background-color: $colorGray;
-
-		@media (max-width: em(768)) {
-			@include adaptive-value-mobile("row-gap", 35, 25, 0);
-			@include adaptive-value-mobile("width", 520, 300, 0);
-			@include adaptive-value-mobile("height", 425, 300, 0);
-			@include adaptive-value-mobile("margin-right", 20, 10, 0);
-			@include adaptive-value-mobile("margin-left", 20, 10, 0);
-		}
-
-		@media (max-width: em(320)) {
-			row-gap: 25px;
-			width: 300px;
-			height: 300px;
-			margin: 0 10px;
-		}
-	}
-} */
-
-/* .title-modal {
-	font-weight: 700;
-	font-size: 22px;
-	line-height: 27px;
-
-	@media (max-width: em(768)) {
-		@include adaptive-value-mobile("font-size", 22, 18, 0);
-		@include adaptive-value-mobile("line-height", 27, 22, 0);
-	}
-
-	@media (max-width: em(320)) {
-		font-size: 18px;
-		line-height: 22px;
-	}
-} */
-
-/* .form-modal {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	row-gap: 30px;
-	max-width: 320px;
-	width: 100%;
-	margin: 0 auto;
-
-	@media (max-width: em(768)) {
-		@include adaptive-value-mobile("row-gap", 30, 20, 0);
-		@include adaptive-value-mobile("max-width", 320, 260, 0);
-	}
-
-	@media (max-width: em(320)) {
-		row-gap: 20px;
-		max-width: 260px;
-	}
-} */
-
-/* .inputs-modal {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-	row-gap: 20px;
-	max-width: 320px;
-	width: 100%;
-
-	@media (max-width: em(768)) {
-		@include adaptive-value-mobile("row-gap", 20, 15, 0);
-		@include adaptive-value-mobile("max-width", 320, 260, 0);
-	}
-
-	@media (max-width: em(320)) {
-		row-gap: 15px;
-		max-width: 260px;
-	}
-
-	&__input {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		justify-content: center;
-		max-width: 320px;
-		width: 100%;
-
-		@media (max-width: em(768)) {
-			@include adaptive-value-mobile("max-width", 320, 260, 0);
-		}
-
-		@media (max-width: em(320)) {
-			max-width: 260px;
-		}
-
-		input {
-			max-width: 320px;
-			width: 100%;
-			height: 40px;
-			border-radius: 10px;
-			padding-top: 10px;
-			padding-right: 20px;
-			padding-bottom: 10px;
-			padding-left: 20px;
-			border: 3px solid transparent;
-			background-color: $colorWhite;
-			color: $colorLightDark;
-			font-weight: 500;
-			font-size: 14px;
-			line-height: 17px;
-			transition: all 0.3s ease;
-
-			@media (min-width: em(769)) {
-				&:hover {
-					border: 3px solid $colorDarkBlue;
-					box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
-				}
-			}
-
-			@media (max-width: em(768)) {
-				@include adaptive-value-mobile("max-width", 320, 260, 0);
-				@include adaptive-value-mobile("height", 40, 30, 0);
-				@include adaptive-value-mobile("padding-top", 10, 7.5, 0);
-				@include adaptive-value-mobile("padding-right", 20, 15, 0);
-				@include adaptive-value-mobile("padding-bottom", 10, 7.5, 0);
-				@include adaptive-value-mobile("padding-left", 20, 15, 0);
-				border: 2px solid transparent;
-				@include adaptive-value-mobile("font-size", 14, 12, 0);
-				@include adaptive-value-mobile("line-height", 17, 15, 0);
-			}
-
-			@media (max-width: em(375)) {
-				border: 1px solid transparent;
-			}
-
-			@media (max-width: em(320)) {
-				max-width: 260px;
-				height: 30px;
-				padding: 7.5px 15px;
-				font-size: 12px;
-				line-height: 15px;
-			}
-
-			&::placeholder {
-				font-weight: 700;
-				font-size: 14px;
-				line-height: 17px;
-				color: $colorPlaceholder;
-
-				@media (max-width: em(768)) {
-					@include adaptive-value-mobile("font-size", 14, 12, 0);
-					@include adaptive-value-mobile("line-height", 17, 15, 0);
-				}
-
-				@media (max-width: em(320)) {
-					font-size: 12px;
-					line-height: 15px;
-				}
-			}
-
-			&:focus {
-				border: 3px solid $colorDarkBlue;
-				box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
-
-				@media (max-width: em(768)) {
-					border: 2px solid $colorDarkBlue;
-				}
-
-				@media (max-width: em(375)) {
-					border: 1px solid $colorDarkBlue;
-				}
-			}
-		}
-	}
-} */
-
-/* .input-checkbox {
-	display: flex;
-	flex-direction: row-reverse;
-	column-gap: 10px;
-
-	label {
-		font-weight: 400;
-		font-size: 14px;
-		line-height: 17px;
-		cursor: pointer;
-
-		@media (max-width: em(768)) {
-			@include adaptive-value-mobile("font-size", 14, 12, 0);
-			@include adaptive-value-mobile("line-height", 17, 15, 0);
-		}
-
-		@media (max-width: em(320)) {
-			font-size: 12px;
-			line-height: 15px;
-		}
-	}
-} */
-
-/* .buttons-modal {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	max-width: 320px;
-	width: 100%;
-
-	@media (max-width: em(768)) {
-		justify-content: center;
-		column-gap: 20px;
-		@include adaptive-value-mobile("max-width", 320, 260, 0);
-	}
-
-	@media (max-width: em(320)) {
-		max-width: 260px;
-	}
-} */
-
-/* .recovery-modal {
-	border-bottom: 2px solid transparent;
-	//font-family: $fontRoboto;
-	font-weight: 400;
-	font-size: 14px;
-	line-height: 17px;
-	transition: all 0.3s ease;
-	will-change: transform;
-
-	@media (min-width: em(769)) {
-		&:hover {
-			border-bottom: 2px solid $colorPeach;
-		}
-	}
-
-	@media (max-width: em(768)) {
-		@include adaptive-value-mobile("font-size", 14, 12, 0);
-		@include adaptive-value-mobile("line-height", 17, 15, 0);
-		border-bottom: 1px solid transparent;
-	}
-
-	@media (max-width: em(320)) {
-		font-size: 12px;
-		line-height: 15px;
-	}
-
-	&:active {
-		transform: scale(0.96);
-	}
-} */

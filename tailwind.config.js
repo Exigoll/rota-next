@@ -11,6 +11,7 @@ module.exports = {
 			"desktopXL": { "max": "1280px" },
 			"desktop": { "max": "1024px" },
 			"tabletXL": { "max": "962px" },
+			"tabletMin": {"min": "769px"},
 			"tablet": { "max": "768px" },
 			"mobile2XL": { "max": "490px" },
 			"mobileXL": { "max": "414px" },
@@ -31,6 +32,7 @@ module.exports = {
 				peach: "#e77c58",
 				darkPeach: "#f76435",
 				placeholder: "rgba(0, 0, 0, 0.3)",
+				overlay: "rgba(0, 0, 0, 0.9)"
 			},
 			scale: {
 				99: "0.99",
@@ -40,28 +42,105 @@ module.exports = {
 	plugins: [
 		plugin(({ addComponents, theme, addUtilities }) => {
 			addComponents({
-				".linkHeader": {
+				".titleSection": {
 					fontFamily: theme("fontFamily.title"),
+					color: theme("colors.lightDark"),
+					fontSize: "1.5rem",
+					lineHeight: "2rem",
 					fontWeight: 700,
-					color: theme("colors.white"),
-					borderBottomWidth: 3,
-					borderStyle: "solid",
-					borderColor: "transparent",
-					willChange: "transform",
-					"&:active": {
-						transform: "scale(0.99)",
+
+					"@media (max-width: 1024px)": {
+						fontSize: "1.25rem",
+						lineHeight: "1.75rem",
 					},
-					"@media (min-width: 769px)": {
-						"&:hover": {
-							borderColor: theme("colors.peach"),
-							color: theme("colors.peach"),
+
+					"@media (max-width: 768px)": {
+						fontSize: "1.125rem",
+						lineHeight: "1.75rem",
+					},
+				},
+				".titlePage": {
+					marginBottom: "30px",
+					fontFamily: theme("fontFamily.title"),
+					color: theme("colors.lightDark"),
+					fontSize: "2.25rem",
+					lineHeight: "2.5rem",
+					fontWeight: 700,
+
+					"@media (max-width: 1024px)": {
+						marginBottom: "25px",
+						fontSize: "1.875rem",
+						lineHeight: "2.25rem",
+					},
+
+					"@media (max-width: 768px)": {
+						marginBottom: "20px",
+						fontSize: "1.5rem",
+						lineHeight: "2rem",
+					},
+
+					"@media (max-width: 490px)": {
+						marginBottom: "15px",
+						fontSize: "1.25rem",
+						lineHeight: "1.75rem",
+					},
+				},
+				".btn": {
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "center",
+					width: "140px",
+					height: "40px",
+					border: "1px solid transparent",
+					borderRadius: "15px",
+					backgroundColor: "transparent",
+					fontFamily: theme("fontFamily.title"),
+					color: theme("colors.white"),
+					fontSize: "1rem",
+					lineHeight: "1.5rem",
+					fontWeight: 700,
+					cursor: "pointer",
+					willChange: "transform",
+					transition: "all 0.5s ease",
+
+					"@media (max-width: 768px)": {
+							width: "126px",
+							height: "36px",
+							fontSize: "0.875rem",
+							lineHeight: "1.25rem",
+						},
+
+					"&--transparent": {
+						color: theme("colors.lightDark"),
+						cursor: "default",
+					},
+
+					"&--blue": {
+						backgroundColor: theme("colors.darkBlue"),
+
+						"@media (min-width: 769px)": {
+							"&:hover": {
+								borderColor: theme("colors.darkBlue"),
+								backgroundColor: theme("colors.white"),
+								color: theme("colors.darkBlue"),
+							},
 						},
 					},
-				},
-				".linkHeaderActive": {
-					color: theme("colors.peach"),
-					borderColor: theme("colors.peach"),
-				},
+					"&--peach": {
+						backgroundColor: theme("colors.peach"),
+
+						"@media (min-width: 769px)": {
+							"&:hover": {
+								borderColor: theme("colors.peach"),
+								backgroundColor: theme("colors.white"),
+								color: theme("colors.peach"),
+							},
+						},
+					},
+					"&:active": {
+						transform: "scale(0.96)",
+					}
+				}
 			});
 			addUtilities({
 				".transitionText": {
