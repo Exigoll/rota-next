@@ -3,15 +3,15 @@ import Link from "next/link";
 import styles from "./LoginModal.module.scss";
 
 interface LoginModalProps {
-	open: boolean;
-	setOpen: (open: boolean) => void;
+	openPopup: boolean;
+	setOpenPopup: (open: boolean) => void;
 }
 
-export const LoginModal = ({ open, setOpen }: LoginModalProps) => {
-	if (!open) return null;
+export const LoginModal = ({ openPopup, setOpenPopup }: LoginModalProps) => {
+	if (!openPopup) return null;
 
 	return (
-		<div className={styles.modalOverlay} onClick={() => setOpen(false)}>
+		<div className={styles.modalOverlay} onClick={() => setOpenPopup(false)}>
 			<div className={styles.modal} onClick={e => e.stopPropagation()}>
 				<h2 className="titleSection">Авторизация</h2>
 				<form className={styles.modalForm}>
@@ -28,7 +28,10 @@ export const LoginModal = ({ open, setOpen }: LoginModalProps) => {
 						</div>
 					</div>
 					<div className={styles.buttonsContainer}>
-						<button className="btn btn--peach" onClick={() => setOpen(false)}>
+						<button
+							className="btn btn--peach"
+							onClick={() => setOpenPopup(false)}
+						>
 							<Link href="./registration">Регистрация</Link>
 						</button>
 						<button className="btn btn--blue">Вход</button>
@@ -37,7 +40,7 @@ export const LoginModal = ({ open, setOpen }: LoginModalProps) => {
 				<Link
 					href="./"
 					className={styles.recovery}
-					onClick={() => setOpen(false)}
+					onClick={() => setOpenPopup(false)}
 				>
 					Восстановить доступ к аккаунту
 				</Link>

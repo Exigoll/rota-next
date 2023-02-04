@@ -4,7 +4,7 @@ import { HeaderBottom } from "./HeaderBottom";
 
 interface HeaderProps {
 	openMenu: boolean;
-	setOpenMenu: void;
+	setOpenMenu: (open: boolean) => void;
 }
 
 export const Header = ({ openMenu, setOpenMenu }: HeaderProps) => {

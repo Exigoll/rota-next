@@ -27,7 +27,7 @@ export const OfficeNotAuth = () => {
 					<span>Войти</span>
 				</button>
 			</div>
-			<LoginModal open={openModal} setOpen={setOpenModal} />
+			<LoginModal openPopup={openModal} setOpenPopup={setOpenModal} />
 		</>
 	);
 };
