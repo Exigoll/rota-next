@@ -2,9 +2,9 @@ import styles from "./styles/Home.module.scss";
 
 const HomePage = () => {
 	return (
-		<main className="main">
-			<div className="page"></div>
-		</main>
+		<section className="section">
+			<div>123</div>
+		</section>
 	);
 };
 

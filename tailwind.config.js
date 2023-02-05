@@ -101,7 +101,7 @@ module.exports = {
 					fontWeight: 700,
 					cursor: "pointer",
 					willChange: "transform",
-					transition: "all 0.5s ease",
+					transition: "all 0.3s, transform 0.1s ease-in-out",
 
 					"@media (max-width: 768px)": {
 							width: "126px",

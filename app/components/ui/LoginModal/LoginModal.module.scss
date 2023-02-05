@@ -1,7 +1,7 @@
 @import "../../../styles/mixins.scss";
 
 .modalOverlay {
-	@apply fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center h-[100vh] w-full py-0 px-[10px] bg-overlay;
+	@apply fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center h-[100vh] w-full py-0 px-[10px] bg-overlay z-[2];
 }
 
 .modal {
@@ -51,7 +51,7 @@
 		}
 
 		&::placeholder {
-			@apply font-title font-bold text-base text-placeholder;
+			@apply text-base text-placeholder;
 
 			@screen tablet {
 				@apply text-sm;

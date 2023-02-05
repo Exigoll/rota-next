@@ -18,7 +18,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 			<body>
 				<div className="app" onClick={() => setOpenMenu(false)}>
 					<Header openMenu={openMenu} setOpenMenu={setOpenMenu} />
-					{children}
+					<main>{children}</main>
 					{/* <Footer /> */}
 				</div>
 			</body>

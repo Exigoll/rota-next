@@ -22,16 +22,42 @@
 	}
 }
 
-.btnLogin,
-.btnOrders {
+.btnRight {
 	@apply max-w-[80px] w-full;
 	border-radius: 0 15px 15px 0;
 }
 
-.btnRegistration,
-.btnExit {
+.btnLeft {
 	@apply flex-row gap-x-[10px] max-w-[218px];
 	border-radius: 15px 0 0 15px;
+}
+
+.btnOffice {
+	@apply flex flex-col items-start justify-between max-w-[218px] w-full h-full gap-y-[1px] text-white;
+}
+
+.btnMenu,
+.btnCart {
+	@apply w-full pl-[15px] pr-[5px] bg-lightDark font-text transitionButton cursor-pointer will-change-transform active:scale-99;
+
+	@screen tabletMin {
+		@apply hover:bg-heavyDark;
+	}
+}
+
+.btnMenu {
+	@apply flex items-center justify-between h-[25px] text-sm;
+	border-radius: 0px 0px 0px 15px;
+}
+
+.btnCart {
+	@apply flex flex-col items-start justify-center gap-y-[1px] h-full;
+	border-radius: 15px 0px 0px 0px;
+
+	span {
+		font-size: 12px;
+		line-height: 12px;
+	}
 }
 
 .icon {

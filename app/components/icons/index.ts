@@ -9,3 +9,4 @@ export * from "./IconExit";
 export * from "./IconOrders";
 export * from "./IconFavorite";
 export * from "./IconRegistration";
+export * from "./IconArrowDownOffice";
