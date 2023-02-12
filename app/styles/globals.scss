@@ -37,13 +37,17 @@ main {
 
 button,
 input,
-select,
+select {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
 button:focus,
 input:focus,
 select:focus {
   border: none;
   outline: none;
-  background: transparent;
 }
 
 ::-webkit-scrollbar {
