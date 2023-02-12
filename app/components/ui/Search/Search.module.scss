@@ -17,6 +17,7 @@
     @apply basis-[80%] w-full h-full px-[20px] border-[3px] border-solid border-transparent text-base  text-lightDark bg-white  focus:boxShadow focus:border-peach;
     border-radius: 15px 0px 0px 15px;
     transition: all 0.3s ease;
+    -moz-outline: none;
 
     @screen desktop {
       @apply px-[15px];
