@@ -3,83 +3,78 @@
 @tailwind utilities;
 
 :root {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 html,
 body {
-	height: 100%;
+  height: 100%;
 }
 
 html {
-	overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 body {
-	@apply relative font-text text-base text-lightDark bg-white;
+  @apply relative font-title font-bold text-base text-lightDark bg-white;
 }
 
 img {
-	display: block;
+  display: block;
 }
 
 main {
-	@apply py-[50px];
-	flex-grow: 1;
+  @apply grow py-[50px];
 
-	@screen tablet {
-		@apply py-[40px];
-	}
+  @screen tablet {
+    @apply py-[40px];
+  }
 
-	@screen mobile2XL {
-		@apply py-[30px];
-	}
+  @screen mobile2XL {
+    @apply py-[30px];
+  }
 }
 
 button,
 input,
 select {
-	border: none;
-	outline: none;
-	background: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
 ::-webkit-scrollbar {
-	@apply bg-lightDark w-[10px];
+  @apply bg-lightDark w-[8px];
 }
 
 ::-webkit-scrollbar-thumb {
-	@apply bg-peach rounded-[5px];
+  @apply bg-peach rounded-[4px];
 }
 
 .app {
-	@apply flex flex-col min-h-full;
+  @apply flex flex-col min-h-full;
 }
 
 .container {
-	@apply max-w-[1475px] h-full my-0 mx-auto px-[20px];
+  @apply max-w-[1475px] my-0 mx-auto px-[20px];
 
-	@screen tablet {
-		@apply px-[15px];
-	}
+  @screen tablet {
+    @apply px-[15px];
+  }
 
-	@screen mobile2XL {
-		@apply px-[10px];
-	}
+  @screen mobile2XL {
+    @apply px-[10px];
+  }
 }
 
 .section {
-	@apply pb-[50px];
+  @apply pb-[50px];
 
-	@screen tablet {
-		@apply pb-[40px];
-	}
+  @screen tablet {
+    @apply pb-[40px];
+  }
 
-	@screen mobile2XL {
-		@apply pb-[30px];
-	}
-}
-
-.page-other {
-	@apply max-w-[1240px] w-full mx-auto my-0;
+  @screen mobile2XL {
+    @apply pb-[30px];
+  }
 }

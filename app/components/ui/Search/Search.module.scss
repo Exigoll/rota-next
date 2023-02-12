@@ -1,46 +1,50 @@
 .search {
-	@apply flex items-center justify-between w-full max-w-[620px] h-[70px] text-base font-medium;
+  @apply flex items-center justify-between w-full max-w-[620px] h-[70px] text-base font-medium;
 
-	@screen desktop2XL {
-		@apply h-[60px];
-	}
+  @screen desktop2XL {
+    @apply h-[60px];
+  }
 
-	@screen desktop {
-		@apply text-sm;
-	}
+  @screen desktop {
+    @apply text-sm;
+  }
 
-	@screen tablet {
-		@apply max-w-full order-3;
-	}
+  @screen tablet {
+    @apply max-w-full order-3;
+  }
 
-	input {
-		@apply basis-[80%] w-full h-full px-[20px] border-[3px] border-solid border-transparent text-lightDark bg-white  focus:boxShadow focus:border-peach;
-		border-radius: 15px 0px 0px 15px;
-		transition: all 0.3s ease;
+  input {
+    @apply basis-[80%] w-full h-full px-[20px] border-[3px] border-solid border-transparent text-base  text-lightDark bg-white  focus:boxShadow focus:border-peach;
+    border-radius: 15px 0px 0px 15px;
+    transition: all 0.3s ease;
 
-		@screen desktop {
-			@apply px-[15px];
-		}
+    @screen desktop {
+      @apply px-[15px];
+    }
 
-		@screen tabletMin {
-			@apply hover:border-peach hover:boxShadow;
-		}
+    @screen tabletMin {
+      @apply hover:border-peach hover:boxShadow;
+    }
 
-		&::placeholder {
-			@apply text-placeholder font-bold text-base;
+    &::placeholder {
+      @apply text-placeholder font-bold;
 
-			@screen desktop {
-				@apply text-sm;
-			}
-		}
-	}
+      @screen desktop {
+        @apply text-sm;
+      }
+    }
+  }
 
-	button {
-		@apply w-full h-full flex items-center justify-center basis-[20%] bg-peach text-white font-bold cursor-pointer will-change-transform active:scale-99 transitionButton;
-		border-radius: 0 15px 15px 0;
+  button {
+    @apply w-full h-full flex items-center justify-center basis-[20%] bg-peach text-white text-base font-bold cursor-pointer will-change-transform active:scale-99 transitionButton;
+    border-radius: 0 15px 15px 0;
 
-		@screen tabletMin {
-			@apply hover:bg-darkPeach;
-		}
-	}
+    @screen tabletMin {
+      @apply hover:bg-darkPeach;
+    }
+
+    @screen tablet {
+      @apply text-sm;
+    }
+  }
 }

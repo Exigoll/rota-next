@@ -10,3 +10,7 @@ export * from "./IconOrders";
 export * from "./IconFavorite";
 export * from "./IconRegistration";
 export * from "./IconArrowDownOffice";
+export * from "./IconOilChemical";
+export * from "./IconBattery";
+export * from "./IconTiresWheels";
+export * from "./IconWrench";

@@ -1,3 +1,352 @@
-main {
-	background-color: red;
+@import "./mixins.scss";
+
+.slider-info {
+	@include adaptive-value("border-radius", 20, 10, 1);
+	cursor: pointer;
+}
+
+.slider-info__slide {
+	position: relative;
+	text-align: center;
+	font-size: 18px;
+	background: $colorWhite;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include adaptive-value("border-radius", 20, 10, 1);
+
+	picture {
+		width: 100%;
+
+		img {
+			display: block;
+			width: 100%;
+			@include adaptive-value-desktop("height", 440, 380, 1);
+			object-fit: cover;
+			object-position: center;
+			@include adaptive-value("border-radius", 20, 10, 1);
+
+			@media (max-width: em(1024)) {
+				@include adaptive-value-tablet("height", 380, 320, 0);
+			}
+
+			@media (max-width: em(768)) {
+				@include adaptive-value-mobile("height", 320, 140, 0);
+			}
+
+			@media (max-width: em(320)) {
+				height: 140px;
+			}
+		}
+	}
+
+	p {
+		position: absolute;
+		bottom: 10%;
+		left: 3%;
+		max-width: 55%;
+		color: $colorWhite;
+		@include adaptive-value-desktop("font-size", 40, 28, 1);
+		@include adaptive-value-desktop("line-height", 48, 34, 1);
+		text-align: left;
+		font-weight: 700;
+		z-index: 2;
+
+		@media (max-width: em(1024)) {
+			@include adaptive-value-tablet("font-size", 28, 24, 0);
+			@include adaptive-value-tablet("line-height", 34, 29, 0);
+		}
+
+		@media (max-width: em(768)) {
+			max-width: 60%;
+			@include adaptive-value-mobile("font-size", 24, 12, 0);
+			@include adaptive-value-mobile("line-height", 29, 14, 0);
+		}
+
+		@media (max-width: em(320)) {
+			max-width: 70%;
+			font-size: 12px;
+			line-height: 14px;
+		}
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(0 0 0 / 50%);
+		@include adaptive-value("border-radius", 20, 10, 1);
+	}
+}
+
+.swiper-pagination {
+	bottom: 2% !important;
+	@include adaptive-value("height", 20, 10, 1);
+
+	@media (max-width: em(560)) {
+		bottom: 1% !important;
+	}
+	@media (max-width: em(375)) {
+		bottom: 0 !important;
+	}
+
+	&-bullet {
+		@include adaptive-value-desktop("width", 12, 10, 1);
+		@include adaptive-value-desktop("height", 12, 10, 1);
+		background-color: $colorWhite;
+
+		@media (max-width: em(1024)) {
+			@include adaptive-value-tablet("width", 10, 8, 0);
+			@include adaptive-value-tablet("height", 10, 8, 0);
+		}
+
+		@media (max-width: em(768)) {
+			@include adaptive-value-mobile("width", 8, 5, 0);
+			@include adaptive-value-mobile("height", 8, 5, 0);
+		}
+
+		@media (max-width: em(320)) {
+			width: 5px;
+			height: 5px;
+			margin: 0 2px !important;
+		}
+	}
+}
+
+.news {
+	padding-bottom: 0;
+
+	@media (max-width: em(768)) {
+		@include adaptive-value-mobile("padding-top", 50, 30, 1);
+		@include adaptive-value-mobile("padding-bottom", 50, 30, 1);
+	}
+
+	@media (max-width: em(320)) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 1fr;
+		grid-column-gap: 40px;
+		grid-row-gap: 40px;
+
+		@media (max-width: em(1280)) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: em(768)) {
+			grid-template-columns: repeat(1, 1fr);
+			grid-column-gap: 0;
+		}
+	}
+}
+
+.item-news {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-self: center;
+	max-width: 520px;
+	width: 100%;
+	background-color: $colorWhite;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	@include adaptive-value("border-radius", 20, 10, 1);
+	transition: all 0.5s ease;
+
+	@media (max-width: em(1024)) {
+		@include adaptive-value-tablet("max-width", 472, 344, 0);
+	}
+
+	@media (max-width: em(768)) {
+		max-width: 60%;
+	}
+
+	@media (max-width: em(580)) {
+		max-width: 80%;
+	}
+
+	@media (max-width: em(375)) {
+		max-width: 100%;
+	}
+
+	@media (max-width: em(320)) {
+		border-radius: 10px;
+	}
+
+	&__img {
+		@include adaptive-value("min-height", 260, 140, 1);
+		height: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			@include adaptive-value("border-top-left-radius", 20, 10, 1);
+			@include adaptive-value("border-top-right-radius", 20, 10, 1);
+
+			@media (max-width: em(320)) {
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+		}
+	}
+}
+
+.content-news {
+	display: flex;
+	flex-direction: column;
+	@include adaptive-value("row-gap", 20, 10, 1);
+	@include adaptive-value("padding-right", 20, 10, 1);
+	@include adaptive-value("padding-left", 20, 10, 1);
+
+	@media (max-width: em(320)) {
+		row-gap: 10px;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+	&__title {
+		@include adaptive-value("padding-top", 30, 20, 1);
+		font-weight: 700;
+		@include adaptive-value-desktop("font-size", 22, 20, 1);
+		@include adaptive-value-desktop("line-height", 26, 24, 1);
+		text-align: center;
+
+		@media (max-width: em(1024)) {
+			@include adaptive-value-tablet("font-size", 20, 18, 0);
+			@include adaptive-value-tablet("line-height", 24, 22, 0);
+		}
+
+		@media (max-width: em(768)) {
+			@include adaptive-value-mobile("font-size", 18, 14, 0);
+			@include adaptive-value-mobile("line-height", 22, 18, 0);
+		}
+
+		@media (max-width: em(320)) {
+			padding-top: 20px;
+			font-size: 14px;
+			line-height: 18px;
+		}
+	}
+
+	&__text {
+		padding: 0 20px;
+		height: 112px;
+		font-family: $fontRoboto;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 19px;
+		@include adaptive-value("text-indent", 25, 20, 1);
+		text-align: justify;
+		text-overflow: clip;
+		overflow: hidden;
+		-webkit-line-clamp: 6;
+		-webkit-box-orient: vertical;
+		display: -webkit-box;
+
+		@media (max-width: em(1024)) {
+			@include adaptive-value-tablet("height", 114, 104, 1);
+			@include adaptive-value-tablet("padding-right", 20, 15, 1);
+			@include adaptive-value-tablet("padding-left", 20, 15, 1);
+			@include adaptive-value-tablet("font-size", 16, 14, 1);
+			@include adaptive-value-tablet("line-height", 19, 17, 1);
+		}
+
+		@media (max-width: em(768)) {
+			@include adaptive-value-mobile("height", 104, 82, 0);
+			@include adaptive-value-mobile("font-size", 14, 12, 0);
+			@include adaptive-value-mobile("line-height", 17, 14, 0);
+		}
+
+		@media (max-width: em(320)) {
+			height: 82px;
+			font-size: 12px;
+			line-height: 14px;
+			text-indent: 20px;
+		}
+	}
+}
+
+.extra-news {
+	display: flex;
+	justify-content: space-around;
+	@include adaptive-value("padding-bottom", 30, 20, 1);
+	@include adaptive-value("padding-top", 20, 10, 1);
+
+	@media (max-width: em(768)) {
+		justify-content: space-between;
+	}
+}
+
+.link-news {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	column-gap: 10px;
+	width: 100%;
+	margin-top: 20px;
+	will-change: transform;
+	transition: all 0.5s ease;
+
+	@media (min-width: em(769)) {
+		&:hover {
+			p {
+				color: $colorPeach;
+			}
+
+			svg {
+				transform: scale(1.2);
+				fill: $colorPeach;
+			}
+		}
+	}
+
+	&:active {
+		transform: scale(0.95);
+	}
+
+	p {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 19px;
+		transition: all 0.5s ease;
+
+		@media (max-width: em(1024)) {
+			@include adaptive-value-tablet("font-size", 16, 14, 1);
+			@include adaptive-value-tablet("line-height", 19, 17, 1);
+		}
+
+		@media (max-width: em(768)) {
+			@include adaptive-value-mobile("font-size", 14, 12, 0);
+			@include adaptive-value-mobile("line-height", 17, 14, 0);
+		}
+
+		@media (max-width: em(320)) {
+			font-size: 12px;
+			line-height: 14px;
+		}
+	}
+
+	svg {
+		width: 20px;
+		height: 20px;
+		fill: $colorLightDark;
+		transition: all 0.5s ease;
+
+		@media (max-width: em(768)) {
+			@include adaptive-value-mobile("width", 20, 14, 1);
+			@include adaptive-value-mobile("height", 20, 14, 1);
+		}
+		@media (max-width: em(320)) {
+			width: 14px;
+			height: 14px;
+		}
+	}
 }

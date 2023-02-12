@@ -4,6 +4,7 @@ const plugin = require("tailwindcss/plugin");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./app/**/*.{js,ts,jsx,tsx}"],
+	important: true,	
 	theme: {
 		screens: {
 			"desktop3XL": { "max": "1920px" },
@@ -19,8 +20,8 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				title: ["var(--font-inter)"],
-				text: ["var(--font-roboto-mono)"],
+				title: ["var(--font-inter)", ...fontFamily.sans],
+				text: ["var(--font-roboto-mono)", ...fontFamily.sans],
 			},
 			colors: {
 				black: "#000000",
@@ -85,6 +86,41 @@ module.exports = {
 						lineHeight: "1.75rem",
 					},
 				},
+				".btnOffice": {
+					display: "flex",
+					flexDirection: "column",
+					alignItems: "center",
+					justifyContent: "center",
+					width: "100%",
+					height: "100%",
+					backgroundColor: theme("colors.lightDark"),
+					color: theme("colors.white"),
+					transition: "transform 0.1s, background-color 0.3s ease-in-out",
+					cursor: "pointer",
+					willChange: "transform",
+
+					"@media (min-width: 769px)": {
+							"&:hover": {
+								backgroundColor: theme("colors.heavyDark"),
+							},
+						},
+
+					"&:active": {
+						transform: "scale(0.99)"
+					}
+				},
+				".btnOfficeRight": {
+					maxWidth: "80px",
+					borderRadius: "0 15px 15px 0",
+				},
+
+				".btnOfficeLeft": {
+					flexDirection: "row",
+					columnGap: "10px",
+					maxWidth: "218px",
+					borderRadius: "15px 0 0 15px",
+				},
+
 				".btn": {
 					display: "flex",
 					alignItems: "center",
