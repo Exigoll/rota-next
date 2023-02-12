@@ -43,19 +43,16 @@ select {
   background: transparent;
 }
 
-button:focus,
-input:focus,
-select:focus {
-  border: none;
-  outline: none;
-}
-
 ::-webkit-scrollbar {
   @apply bg-lightDark w-[8px];
 }
 
 ::-webkit-scrollbar-thumb {
   @apply bg-peach rounded-[4px];
+}
+
+:-moz-focusring {
+  outline: none;
 }
 
 .app {
