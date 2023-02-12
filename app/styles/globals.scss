@@ -37,7 +37,10 @@ main {
 
 button,
 input,
-select {
+select,
+button:focus,
+input:focus,
+select:focus {
   border: none;
   outline: none;
   background: transparent;
