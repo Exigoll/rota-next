@@ -1,10 +1,9 @@
 "use client";
 
 import { IconLogin, IconRegistration } from "@components/icons";
+import { LoginModal } from "@components/ui/LoginModal";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
-import { LoginModal } from "../LoginModal/LoginModal";
 
 import styles from "./Office.module.scss";
 
